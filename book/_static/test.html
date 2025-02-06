@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    Hello, iframe!
+    <button id="test-api-button" onclick="getContent()">Click here!</button>
+    <p id="test-api-content"></p>
+    <script> 
+    const URL = "https://anapioficeandfire.com/api/books/1"
+    
+    function getContent() {
+        
+        fetch(URL).then(response => response.json()).then((content) => {
+            const b = document.getElementById("test-api-content")
+            b.innerText = content.name
+        }
+    )
+}
+    </script>
+</body>
+</html>
